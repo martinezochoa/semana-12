@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas Secuenciales y Condicionales</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="book-container">
+        
+        <div class="page active" id="page-0">
+            <header>
+                <h1>Brian Martinez</h1>
+                <h2>Proyecto: Problemas Secuenciales y Condicionales</h2>
+            </header>
+            
+            <div class="content-center">
+                <img src="hola.png" alt="Imagen de Portada" class="portada-img">
+            </div>
+
+            <div class="navigation-footer">
+                <span></span> 
+                <button class="nav-btn next" onclick="changePage(1)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-1">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.1: Permitido Votar</h3>
+            </div>
+            <div class="problem-body">
+                <p>Determinar si una persona puede votar con base en su edad en las próximas elecciones.</p>
+                <input type="number" id="p31-edad" placeholder="Introduce tu edad">
+                <button class="calc-btn" onclick="calcular31()">Calcular</button>
+                <div class="result" id="res-31"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(0)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(2)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-2">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.2: Sueldo Semanal con Horas Extra</h3>
+            </div>
+            <div class="problem-body">
+                <p>Cálculo de sueldo semanal (Horas extra tras las 40h se pagan al doble).</p>
+                <input type="number" id="p32-horas" placeholder="Horas trabajadas">
+                <input type="number" id="p32-pago" placeholder="Pago por hora">
+                <button class="calc-btn" onclick="calcular32()">Calcular</button>
+                <div class="result" id="res-32"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(1)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(3)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-3">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.3: Regalo del 14 de Febrero</h3>
+            </div>
+            <div class="problem-body">
+                <p>Determina qué regalo puedes comprar según tu presupuesto.</p>
+                <input type="number" id="p33-presupuesto" placeholder="Tu presupuesto $">
+                <button class="calc-btn" onclick="calcular33()">Ver Regalo</button>
+                <div class="result" id="res-33"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(2)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(4)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-4">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.4: Cobro de Estacionamiento</h3>
+            </div>
+            <div class="problem-body">
+                <p>Calcular el costo del estacionamiento según las horas escalonadas.</p>
+                <input type="number" id="p4-horas" placeholder="Cantidad de horas">
+                <button class="calc-btn" onclick="calcular34()">Calcular Costo</button>
+                <div class="result" id="res-34"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(3)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(5)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-5">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.5: Persona Menor</h3>
+            </div>
+            <div class="problem-body">
+                <p>Ingresa los datos de 3 personas para saber quién es el menor.</p>
+                <input type="text" id="p5-n1" placeholder="Nombre 1"> 
+                <input type="number" id="p5-e1" placeholder="Edad 1"><br><br>
+                
+                <input type="text" id="p5-n2" placeholder="Nombre 2"> 
+                <input type="number" id="p5-e2" placeholder="Edad 2"><br><br>
+                
+                <input type="text" id="p5-n3" placeholder="Nombre 3"> 
+                <input type="number" id="p5-e3" placeholder="Edad 3"><br><br>
+                
+                <button class="calc-btn" onclick="calcular35()">Encontrar Menor</button>
+                <div class="result" id="res-35"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(4)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(6)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-6">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.6: Descuento de Artículos</h3>
+            </div>
+            <div class="problem-body">
+                <p>Calcula el costo final aplicando el 15%, 12% o 10% de descuento.</p>
+                <input type="number" id="p6-precio" placeholder="Precio del artículo">
+                <button class="calc-btn" onclick="calcular36()">Aplicar Descuento</button>
+                <div class="result" id="res-36"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(5)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(7)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-7">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.7: Asignación de Becas</h3>
+            </div>
+            <div class="problem-body">
+                <p>Asigna el monto de la beca según la edad y el promedio del alumno.</p>
+                <input type="number" id="p7-edad" placeholder="Edad del estudiante">
+                <input type="number" id="p7-promedio" step="0.1" placeholder="Promedio (0.0 - 10.0)">
+                <button class="calc-btn" onclick="calcular37()">Verificar Beca</button>
+                <div class="result" id="res-37"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(6)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(8)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-8">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.8: Bono Mensual Mayor</h3>
+            </div>
+            <div class="problem-body">
+                <p>Calcula el bono por antigüedad y por sueldo, asignando el más alto.</p>
+                <input type="number" id="p8-antiguedad" placeholder="Años de antigüedad">
+                <input type="number" id="p8-sueldo" placeholder="Sueldo base $">
+                <button class="calc-btn" onclick="calcular38()">Calcular Bono</button>
+                <div class="result" id="res-38"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(7)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(9)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-9">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.9: Póliza de Seguro de Auto</h3>
+            </div>
+            <div class="problem-body" style="text-align: left; max-width: 400px; margin: auto;">
+                <p style="text-align: center;">Configura los datos del cliente para calcular la póliza:</p>
+                <label>Tipo de Póliza:</label>
+                <select id="p9-tipo">
+                    <option value="A">Amplia (A)</option>
+                    <option value="B">Daños a Terceros (B)</option>
+                </select><br><br>
+                <label><input type="checkbox" id="p9-alcohol"> ¿Bebe alcohol?</label><br>
+                <label><input type="checkbox" id="p9-lentes"> ¿Usa lentes?</label><br>
+                <label><input type="checkbox" id="p9-enfermedad"> ¿Padece enfermedad crónica?</label><br><br>
+                <input type="number" id="p9-edad" placeholder="Edad del conductor">
+                <button class="calc-btn" onclick="calcular39()" style="margin-top:10px;">Calcular Póliza</button>
+                <div class="result" id="res-39" style="text-align: center;"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(8)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(10)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-10">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.10: Destino de Vacaciones</h3>
+            </div>
+            <div class="problem-body">
+                <p>Descubre a dónde puedes viajar según tu dinero disponible (Costo ida y vuelta por Km).</p>
+                <input type="number" id="p10-costoKm" placeholder="Costo por Kilómetro ($)">
+                <input type="number" id="p10-presupuesto" placeholder="Tu presupuesto total ($)">
+                <button class="calc-btn" onclick="calcular310()">Buscar Destinos</button>
+                <div class="result" id="res-310"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(9)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(11)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-11">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.11: Bono por Antigüedad Tienda</h3>
+            </div>
+            <div class="problem-body">
+                <p>Determina el bono que recibirá el trabajador de la tienda según sus años.</p>
+                <input type="number" id="p11-anos" placeholder="Años en la tienda">
+                <button class="calc-btn" onclick="calcular311()">Calcular Bono</button>
+                <div class="result" id="res-311"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(10)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(12)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-12">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.12: Sueldo Semanal Triple</h3>
+            </div>
+            <div class="problem-body">
+                <p>Sueldo base hasta 40h, doble de 41-45h, triple de 46-50h. Más de 50h prohibido.</p>
+                <input type="number" id="p12-horas" placeholder="Horas trabajadas">
+                <input type="number" id="p12-pago" placeholder="Pago por hora">
+                <button class="calc-btn" onclick="calcular312()">Calcular Sueldo</button>
+                <div class="result" id="res-312"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(11)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button class="nav-btn next" onclick="changePage(13)">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page" id="page-13">
+            <div class="page-header">
+                <button class="home-btn" onclick="goHome()"><i class="fas fa-home"></i></button>
+                <h3>Problema 3.13: Viaje de Estudios</h3>
+            </div>
+            <div class="problem-body">
+                <p>Determina el costo del pasaje individual basándose en el total de alumnos.</p>
+                <input type="number" id="p13-alumnos" placeholder="Número de alumnos">
+                <button class="calc-btn" onclick="calcular313()">Calcular Pasaje</button>
+                <div class="result" id="res-313"></div>
+            </div>
+            <div class="navigation-footer">
+                <button class="nav-btn prev" onclick="changePage(12)"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <span></span> 
+            </div>
+        </div>
+
+    </div>
+
+    <script src="scripts/problemas.js"></script>
+</body>
+</html>
